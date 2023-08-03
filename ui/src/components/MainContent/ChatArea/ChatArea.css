@@ -1,0 +1,9 @@
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    border: 0px solid #ec0c0c;
+    overflow-y: auto
+  }
+  

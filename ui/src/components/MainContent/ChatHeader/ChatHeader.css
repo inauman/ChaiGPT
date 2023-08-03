@@ -1,0 +1,27 @@
+.chat-header {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: 0px solid #210cdf;
+  }
+  
+  .model-selection {
+    display: flex;
+  }
+  
+  .model-button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .model-button.active {
+    background: #666;
+  }
+  

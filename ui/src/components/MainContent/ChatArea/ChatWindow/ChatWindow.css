@@ -1,0 +1,15 @@
+.chat-window {
+    flex: 1;
+    padding: 10px;
+    border-left: 1px solid #333;
+    height: calc(100vh);
+    overflow-y: auto
+  }
+  .message {
+    margin-bottom: 10px;
+    white-space: pre-line;
+  }
+  
+  .typing-indicator {
+    font-style: italic;
+  }

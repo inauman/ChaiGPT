@@ -1,0 +1,22 @@
+.assistant-message {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    justify-content: flex-end;
+  }
+  
+  .assistant-icon {
+    width: 30px;
+    height: 30px;
+    background: url('/path/to/assistant-icon.png') no-repeat center;
+    background-size: contain;
+    margin-left: 10px;
+  }
+  
+  .assistant-text {
+    background: lightgray;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+  }
+  

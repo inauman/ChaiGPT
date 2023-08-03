@@ -1,0 +1,11 @@
+/* src/components/Header/Header.css */
+.header {
+  background-color: #1a1a1a; /* Dark background */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 25px; /* You can adjust the size as needed */
+}

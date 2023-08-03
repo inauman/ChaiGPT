@@ -1,0 +1,71 @@
+/* src/components/Sidebar/Sidebar.css */
+.sidebar {
+    background-color: #2a2a2a; /* Darker background */
+    width: 250px; /* Adjust the width as needed */
+    padding: 10px;
+    font-size: 14px;
+    height: calc(100vh);
+    overflow-y: auto;
+  }
+  
+  .new-chat-button {
+    background-color: #4a4a4a; /* Even darker background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 14px; /* Set the font size to the desired value */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Ensure that the desired font family is applied */
+  }
+  
+  /* src/components/MainContent/Sidebar/Sidebar.css */
+.sidebar.expanded {
+  width: 250px; /* Width when expanded */
+}
+
+.sidebar.collapsed {
+  width: 50px; /* Width when collapsed */
+}
+
+.toggle-button {
+  background-color: #4a4a4a;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+/* src/components/MainContent/Sidebar/Sidebar.css */
+.chat-search {
+  margin-bottom: 10px;
+}
+
+.chat-search-input {
+  width: 96%;
+  padding: 5px;
+  border: none;
+}
+
+.chat-list {
+  overflow-y: scroll; /* Enable scrolling if there are many chats */
+}
+
+.chat-item {
+  padding: 10px;
+  color: #ffffff;
+  border-bottom: 1px solid #4a4a4a; /* Separator between chats */
+  cursor: pointer;
+}
+
+.chat-item:hover {
+  background-color: #3a3a3a; /* Highlight on hover */
+}
+
+  /* Add more styling as needed */
+  

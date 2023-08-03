@@ -1,0 +1,12 @@
+.main-content {
+    display: flex;
+    flex-direction: row; /* Aligns the children horizontally */
+    height: calc(100vh);    
+  }
+  .chat-section {
+    flex: 1; /* Takes 3/4 of the available width */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Aligns the children vertically */
+  }
+  
