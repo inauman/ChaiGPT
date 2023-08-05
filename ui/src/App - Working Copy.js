@@ -8,38 +8,37 @@ function App() {
     setUserInput(event.target.value);
   };
 
-  const handleButtonClick = async () => {
+  const handleButtonClick = async() => {
     // Add the user's input message to the chat
-    const userMessage = { id: Date.now() + Math.random(), text: userInput, sender: 'user' };
+    const userMessage = { id: Date.now(), text: userInput, sender: 'user' };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
-  
+
     try {
       // Send a POST request to the chat API with the user's input
       const response = await fetch('http://127.0.0.1:5000/api/chaty', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: [{ role: "user", content: userInput }] }),
+        //body: JSON.stringify({ message: userInput })
       });
-      
       // Get a ReadableStreamDefaultReader object from the response body
       const reader = response.body.getReader();
-  
+
       // Read the response as text
       let data = '';
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         data += new TextDecoder().decode(value);
-  
-        // Add the current chunk of data to the chat
-        const serverMessage = { id: Date.now() + Math.random(), text: data, sender: 'server' };
-        setMessages((prevMessages) => [...prevMessages, serverMessage]);
-        data = '';
+        // Add the server's response to the chat
+        const serverMessage = { id: Date.now(), text: data, sender: 'server' };
+        setMessages((prevMessages) => [prevMessages, serverMessage]);
+        
       }
     } catch (error) {
       console.error('Failed to send message:', error);
     }
-  
+
     // Clear the user input
     setUserInput('');
   };
@@ -56,9 +55,9 @@ function App() {
         }}
       >
         {messages.map((message) => (
-          <pre key={message.id} style={{ textAlign: message.sender === 'user' ? 'right' : 'left' }}>
+          <div key={message.id} style={{ textAlign: message.sender === 'user' ? 'right' : 'left' }}>
             {message.text}
-          </pre>
+          </div>
         ))}
       </div>
       <div
