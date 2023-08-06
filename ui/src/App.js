@@ -23,7 +23,9 @@ function App() {
       
       // Get a ReadableStreamDefaultReader object from the response body
       const reader = response.body.getReader();
-  
+      
+      const result = document.querySelector("#result");
+      result.innerHTML = "";
       // Read the response as text
       let data = '';
       while (true) {
@@ -34,6 +36,7 @@ function App() {
         // Add the current chunk of data to the chat
         const serverMessage = { id: Date.now() + Math.random(), text: data, sender: 'server' };
         setMessages((prevMessages) => [...prevMessages, serverMessage]);
+        result.innerHTML += data; 
         data = '';
       }
     } catch (error) {
@@ -45,8 +48,8 @@ function App() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', alignItems: 'center' }}>
-      <div
+    <div className="whitespace-pre" style={{ display: 'flex', flexDirection: 'column', height: '100vh', alignItems: 'center' }}>
+      <div id="result"
         style={{
           flex: 1,
           overflowY: 'scroll',
@@ -55,11 +58,7 @@ function App() {
           backgroundColor: '#f0f0f0',
         }}
       >
-        {messages.map((message) => (
-          <pre key={message.id} style={{ textAlign: message.sender === 'user' ? 'right' : 'left' }}>
-            {message.text}
-          </pre>
-        ))}
+        
       </div>
       <div
         style={{
